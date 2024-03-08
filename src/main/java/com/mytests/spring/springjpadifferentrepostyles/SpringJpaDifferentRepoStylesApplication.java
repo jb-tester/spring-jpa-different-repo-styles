@@ -8,6 +8,7 @@ import com.mytests.spring.springjpadifferentrepostyles.repositories.NotAnnotated
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
@@ -16,7 +17,8 @@ public class SpringJpaDifferentRepoStylesApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringJpaDifferentRepoStylesApplication.class, args);
     }
-@Bean
+
+    @Bean
     public CommandLineRunner commandLineRunner(AnnotatedAsRepositoryDefinitionInterface repo1, NotAnnotatedInterfaceExtendingCrudRepository repo2, ContactProjectionRepository repo3) {
         return args -> {
             System.out.println("--------------------------------------");
@@ -24,7 +26,7 @@ public class SpringJpaDifferentRepoStylesApplication {
                 System.out.println(s);
             }
             System.out.println("--------------------------------------");
-            for (Contact s : repo2.queryContactsByEmailEndingWithOrEmailEndingWithOrderByFirstnameDesc("borland.com","jetbrains.com")) {
+            for (Contact s : repo2.queryContactsByEmailEndingWithOrEmailEndingWithOrderByFirstnameDesc("borland.com", "jetbrains.com")) {
                 System.out.println(s);
             }
             System.out.println("--------------------------------------");

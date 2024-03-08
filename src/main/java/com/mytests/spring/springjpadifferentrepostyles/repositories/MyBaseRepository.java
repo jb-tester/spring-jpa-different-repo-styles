@@ -9,7 +9,7 @@ import java.util.Optional;
 @NoRepositoryBean
 interface MyBaseRepository extends Repository<Contact, Integer> {
 
-  Optional<Contact> findById(int id);
+    Optional<Contact> findById(int id);
 
-  Contact save(Contact entity);
+    Contact save(Contact entity);
 }

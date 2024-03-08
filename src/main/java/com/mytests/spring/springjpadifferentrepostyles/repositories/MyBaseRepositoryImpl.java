@@ -8,5 +8,6 @@ import java.util.List;
 public interface MyBaseRepositoryImpl extends MyBaseRepository {
 
     List<Contact> findContactsBy();
+
     boolean existsByTelephoneContains(String phone);
 }

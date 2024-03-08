@@ -5,3 +5,5 @@ https://youtrack.jetbrains.com/issue/IDEA-347607/Spring-JPA-the-named-queries-ca
 https://youtrack.jetbrains.com/issue/IDEA-347609/Spring-JPA-repository-methods-like-save-count-delete-have-gutter-but-cant-be-run
 https://youtrack.jetbrains.com/issue/IDEA-347610/Spring-JPA-the-gutter-icons-should-not-be-shown-for-query-methods-in-the-generic-base-repositories
 https://youtrack.jetbrains.com/issue/IDEA-347613/Spring-JPA-support-console-running-for-the-methods-with-Top-or-First-suffixes
+https://youtrack.jetbrains.com/issue/IDEA-348613/Spring-JPA-for-deleteentity-and-deleteAllentities-the-gutter-icon-should-not-be-shown
+https://youtrack.jetbrains.com/issue/IDEA-348612/Spring-Data-for-repository-methods-annotated-with-QuerynativeQiery-true-the-JPA-console-is-invoked
