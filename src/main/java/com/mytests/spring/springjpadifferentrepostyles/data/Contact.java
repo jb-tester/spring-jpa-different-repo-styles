@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "contact")
 @NamedQuery(name = "Contact.namedQuery1", query = "SELECT c FROM Contact c where c.lastname = :lastname")
+@NamedNativeQuery(name = "Contact.namedNativeQuery1", query = "SELECT * FROM Contact where lastname = ?1")
 public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
