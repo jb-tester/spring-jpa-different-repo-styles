@@ -18,7 +18,7 @@ public interface ContactProjectionRepository extends JpaRepository<Contact, Long
     @Query(Q1)
     List<ContactProjection> customQuery1();
 
-    // jpa console is opened
+    // jpa console is opened - fixed
     // https://youtrack.jetbrains.com/issue/IDEA-348612/Spring-Data-for-repository-methods-annotated-with-QuerynativeQiery-true-the-JPA-console-is-invoked
     @Query(nativeQuery = true, value = "select * from Contact")
     List<ContactProjection> customQuery2();

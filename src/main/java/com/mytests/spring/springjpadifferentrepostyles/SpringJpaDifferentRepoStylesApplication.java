@@ -1,10 +1,7 @@
 package com.mytests.spring.springjpadifferentrepostyles;
 
 import com.mytests.spring.springjpadifferentrepostyles.data.Contact;
-import com.mytests.spring.springjpadifferentrepostyles.repositories.AnnotatedAsRepositoryDefinitionInterface;
-import com.mytests.spring.springjpadifferentrepostyles.repositories.ContactProjection;
-import com.mytests.spring.springjpadifferentrepostyles.repositories.ContactProjectionRepository;
-import com.mytests.spring.springjpadifferentrepostyles.repositories.NotAnnotatedInterfaceExtendingCrudRepository;
+import com.mytests.spring.springjpadifferentrepostyles.repositories.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +16,7 @@ public class SpringJpaDifferentRepoStylesApplication {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(AnnotatedAsRepositoryDefinitionInterface repo1, NotAnnotatedInterfaceExtendingCrudRepository repo2, ContactProjectionRepository repo3) {
+    public CommandLineRunner commandLineRunner(AnnotatedAsRepositoryDefinitionInterface repo1, NotAnnotatedInterfaceExtendingCrudRepository repo2, ContactProjectionRepository repo3, RepositoryWithQueryAnnotations repositoryWithQueryAnnotations) {
         return args -> {
             System.out.println("--------------------------------------");
             for (Contact s : repo2.findLastnameByFirstname("vera")) {
@@ -42,6 +39,20 @@ public class SpringJpaDifferentRepoStylesApplication {
             System.out.println("--------------------------------------");
             for (ContactProjection cp : repo3.findByFirstname("irina")) {
                 System.out.println(cp.getFirstname() + " " + cp.getLastname() + " " + cp.getContacts());
+            }
+            System.out.println("--------------------------------------");
+
+            for (Contact cp : repositoryWithQueryAnnotations.testNativeQueryWithNamedParams1("irina", "petrovskaya")) {
+                System.out.println(cp);
+            }
+            for (Contact cp : repositoryWithQueryAnnotations.testNativeQueryWithNamedParams2("irina", "petrovskaya")) {
+                System.out.println(cp);
+            }
+            for (Contact cp : repositoryWithQueryAnnotations.testNativeQueryWithIndexedParams("irina", "petrovskaya")) {
+                System.out.println(cp);
+            }
+            for (Contact cp : repositoryWithQueryAnnotations.testNativeQueryWithoutParams()) {
+                System.out.println(cp);
             }
             System.out.println("--------------------------------------");
         };
