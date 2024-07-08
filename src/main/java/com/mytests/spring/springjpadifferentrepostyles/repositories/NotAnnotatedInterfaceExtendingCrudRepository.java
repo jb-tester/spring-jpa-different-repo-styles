@@ -74,5 +74,6 @@ public interface NotAnnotatedInterfaceExtendingCrudRepository extends CrudReposi
     @Override
     void deleteAll(Iterable<? extends Contact> entities);
 
-
+    // this is incorrect method name in Spring JPA
+    List<Contact> findByFirstnameMatchesRegex(String firstname);
 }

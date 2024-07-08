@@ -36,6 +36,11 @@ public class SpringJpaDifferentRepoStylesApplication {
             for (Contact s : repo2.findContactsBy()) {
                 System.out.println(s);
             }
+           /* System.out.println("--------------------------------------");
+            for (Contact s : repo2.findByFirstnameMatchesRegex("ir???")) {
+                System.out.println(s);
+            }*/
+
             System.out.println("--------------------------------------");
             for (ContactProjection cp : repo3.findByFirstname("irina")) {
                 System.out.println(cp.getFirstname() + " " + cp.getLastname() + " " + cp.getContacts());
