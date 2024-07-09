@@ -34,8 +34,9 @@ public interface NotAnnotatedInterfaceExtendingCrudRepository extends CrudReposi
     // https://youtrack.jetbrains.com/issue/IDEA-347607 - fixed
     // now: no gutter icon at all - https://youtrack.jetbrains.com/issue/IDEA-353138/Spring-JPA-provide-possibility-to-run-the-named-queries-via-gutter-icon
     List<Contact> namedQuery1(String lastname);
-    // same - for the native named queries
-    List<Contact> namedNativeQuery1(String lastname);
+    // same - for the native named queries; if the 'conventional' name is provided, the query is executable.
+    // but tries to use the JPA console
+    List<Contact> findByLastName(String lastname);
 
     List<Contact> findContactsBy();
 
