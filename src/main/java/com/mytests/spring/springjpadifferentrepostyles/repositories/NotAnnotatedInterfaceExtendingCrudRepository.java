@@ -48,9 +48,16 @@ public interface NotAnnotatedInterfaceExtendingCrudRepository extends CrudReposi
     @Override
     long count();
 
-    // ok
+    // should have gutter
     @Override
     void deleteById(Integer id);
+    // should have gutter
+    @Override
+    void deleteAll();
+    // should have gutter
+    @Override
+    void deleteAllById(Iterable<? extends Integer> integers);
+
     // ok
     void removeByFirstname(String firstname);
 
