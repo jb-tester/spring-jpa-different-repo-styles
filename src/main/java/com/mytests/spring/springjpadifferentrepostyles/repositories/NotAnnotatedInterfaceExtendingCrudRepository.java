@@ -59,6 +59,7 @@ public interface NotAnnotatedInterfaceExtendingCrudRepository extends CrudReposi
     @Override
     void deleteAllById(Iterable<? extends Integer> integers);
 
+
     // ok
     void removeByFirstname(String firstname);
 

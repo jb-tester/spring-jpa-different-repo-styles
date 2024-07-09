@@ -8,3 +8,4 @@
 * https://youtrack.jetbrains.com/issue/IDEA-348613/Spring-JPA-for-deleteentity-and-deleteAllentities-the-gutter-icon-should-not-be-shown
 * https://youtrack.jetbrains.com/issue/IDEA-348612/Spring-Data-for-repository-methods-annotated-with-QuerynativeQiery-true-the-JPA-console-is-invoked
 * https://youtrack.jetbrains.com/issue/IDEA-356059/Spring-Data-the-run-gutter-icons-could-be-shown-for-non-generic-methods-in-NoRepositoryBean-classes
+* https://youtrack.jetbrains.com/issue/IDEA-356079/Spring-JPA-the-gutter-run-icons-are-not-available-for-inherited-delete-methods-that-dont-require-entity-argument
