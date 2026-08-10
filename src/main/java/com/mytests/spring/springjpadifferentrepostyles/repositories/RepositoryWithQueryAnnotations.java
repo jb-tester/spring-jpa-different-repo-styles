@@ -1,6 +1,7 @@
 package com.mytests.spring.springjpadifferentrepostyles.repositories;
 
 import com.mytests.spring.springjpadifferentrepostyles.data.Contact;
+import org.springframework.data.jpa.repository.NativeQuery;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -37,7 +38,7 @@ public interface RepositoryWithQueryAnnotations extends CrudRepository<Contact, 
             """)
     List<Contact> testNativeQueryWithIndexedParams(String name, String surname);
 
-    @Query(nativeQuery = true,
+    @NativeQuery(
             value = """
             select * from Contact e
             where e.firstname = 'irina'
